@@ -27,3 +27,4 @@ The application servers are part of an Auto Scaling Group, allowing the system t
 A relational database (RDS) is deployed in private subnets and is only accessible by the application servers, ensuring that sensitive data is never exposed to the public internet.
 
 An S3 bucket is used to store static assets such as images or files. All networking components are isolated within the VPC and protected using security groups that follow the principle of least privilege.
+# anthropic-devops-assessment
