@@ -16,11 +16,11 @@ Exercise 1 (Infrastructure as Code): 25 Minutes
 
 Exercise 2 (CI/CD Pipeline Design): 30 Minutes
 
-Exercise 3 (Incident Post-Mortem): 20 minutes
+Exercise 3 (Incident Post-Mortem): 40 minutes
 
-Exercise 4 (Scripting & Automation): 45 minutes
+Exercise 4 (Scripting & Automation): 1.2 hours
 
-Exercise 5 (Kubernetes Challenge): 1.5 hour
+Exercise 5 (Kubernetes Challenge): 2.3 hours
 
 ## Commit History
 
