@@ -1,16 +1,19 @@
 # Exercise 2 – CI/CD Pipeline Design
 
 ## Overview
-This CI/CD pipeline is designed to automate the build, test, security scanning, and deployment of a Python web application to Kubernetes. The goal is to provide fast feedback to developers while ensuring quality and security before production releases.
+This exercise demonstrates the design of a CI/CD pipeline for a Python-based web application deployed to Kubernetes. The focus is on showing a clear and reliable delivery flow rather than executing a live deployment.
 
-## Pipeline Stages
-The pipeline starts with building a Docker image after code is pushed to the main branch. Automated tests are executed next to validate application functionality. A security scanning stage follows to detect vulnerabilities early in the process.
+## Pipeline Flow
+The pipeline is triggered when code is pushed to the main branch. It begins by building a Docker image for the application, followed by running automated tests to validate functionality. A security scanning stage is included to identify vulnerabilities early in the process.
 
-## Deployment Strategy
-After successful validation, the application is deployed automatically to the staging environment. Production deployment requires a manual approval step to reduce risk and ensure controlled releases.
+## Environment Promotion
+After validation, the application is automatically deployed to the staging environment. This allows testing in an environment that closely resembles production. Promotion to production is intentionally gated with a manual approval step to reduce deployment risk.
 
 ## Rollback Strategy
-If an issue is detected after deployment, rollback is handled by redeploying a previously known stable container image.
+In case of issues after deployment, rollback is handled by redeploying a previously known stable container image. This approach allows fast recovery without rebuilding artifacts.
 
-## Secret Management
-Sensitive information such as credentials and API keys are not stored in the pipeline file. In a real environment, secrets would be managed using GitHub Secrets or a cloud-based secret manager and injected securely during runtime.
+## Secret and Credential Management
+Secrets such as cloud credentials, Kubernetes access details, and API keys are never stored in the repository. Instead, they are managed using GitHub Secrets and injected into the pipeline securely at runtime. In a production setup, this strategy can be extended using cloud-native secret managers like AWS Secrets Manager or HashiCorp Vault for better rotation and auditing.
+
+## Assumptions
+This exercise focuses on pipeline design and documentation. The pipeline demonstrates structure, security awareness, and deployment flow rather than a fully operational system.
